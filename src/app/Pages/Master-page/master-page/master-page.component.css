@@ -1,0 +1,21 @@
+.orange-button{
+    @apply items-center px-5 bg-orange-500 text-white rounded-md h-7 hover:outline-white hover:bg-white hover:text-orange-500;
+}
+.ct-top-menu-item{
+    @apply cursor-pointer py-1 hover:bg-orange-600 h-7 hover:text-gray-950 relative
+     after:absolute 
+     after:bottom-0 
+     after:left-0 
+     after:bg-orange-800 
+     after:h-1 
+     after:w-0 
+     hover:after:w-full 
+     after:transition-all 
+     after:ease-in-out 
+     after:duration-300;
+}
+.bm-icon{ @apply
+    w-5
+    h-5
+    inline-block
+}
