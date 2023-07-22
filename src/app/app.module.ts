@@ -7,12 +7,15 @@ import { ButtonModule } from 'primeng/button';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { MasterPageComponent } from './Pages/Master-page/master-page/master-page.component';
 import { LoginComponent } from './Pages/Master-page/master-page/login/login.component';
+import { RouterModule } from '@angular/router';
+import { TrangchuComponent } from './Pages/Master-page/master-page/login/trangchu/trangchu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MasterPageComponent,
     LoginComponent,
+    TrangchuComponent,
     
     
   ],
@@ -20,7 +23,8 @@ import { LoginComponent } from './Pages/Master-page/master-page/login/login.comp
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    MegaMenuModule
+    MegaMenuModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

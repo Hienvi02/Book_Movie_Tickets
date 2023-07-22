@@ -1,5 +1,5 @@
 .orange-button{
-    @apply items-center px-5 bg-orange-500 text-white rounded-md h-7 hover:outline-white hover:bg-white hover:text-orange-500;
+    @apply items-center px-5 bg-orange-500 text-white rounded-md h-7 hover:outline-white hover:bg-white hover:text-orange-500 active:bg-orange-500 focus:outline-none focus:ring focus:ring-orange-300;
 }
 .ct-top-menu-item{
     @apply cursor-pointer py-1 hover:bg-orange-600 h-7 hover:text-gray-950 relative
