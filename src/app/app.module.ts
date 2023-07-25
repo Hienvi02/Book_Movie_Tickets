@@ -9,6 +9,8 @@ import { MasterPageComponent } from './Pages/Master-page/master-page/master-page
 import { LoginComponent } from './Pages/Master-page/master-page/login/login.component';
 import { RouterModule } from '@angular/router';
 import { TrangchuComponent } from './Pages/Master-page/master-page/login/trangchu/trangchu.component';
+import { ShowtimeComponent } from './Pages/Master-page/master-page/login/showtime/showtime.component';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { TrangchuComponent } from './Pages/Master-page/master-page/login/trangch
     MasterPageComponent,
     LoginComponent,
     TrangchuComponent,
+    ShowtimeComponent,
+    
     
     
   ],
@@ -24,7 +28,9 @@ import { TrangchuComponent } from './Pages/Master-page/master-page/login/trangch
     AppRoutingModule,
     ButtonModule,
     MegaMenuModule,
-    RouterModule
+    RouterModule, 
+    CardModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

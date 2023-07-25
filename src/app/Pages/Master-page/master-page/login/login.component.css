@@ -7,16 +7,17 @@ body{
 }
 
 .body-login{
-    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3-kTJMSMnmafaTjzEktTBsbPj--of68oh4oZc9D6R9ppDgCSju_A9llWvQRHhLQq3fJE&usqp=CAU"); */
+    
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: flexed;
     min-height:100vh;
+   
     
 }
 .btn-login{
    
-    @apply items-center text-center py-2 px-6 bg-orange-400 rounded-xl w-24 mx-28;
+    @apply items-center text-center py-2 px-6 bg-orange-400 rounded-xl w-full ;
 }
 .wrapper-login{
     

@@ -1,0 +1,43 @@
+<div> 
+  <app-trangchu></app-trangchu>     
+    <div>
+        <div>             
+          <div class=" pl-5 ">
+            <div class="search  "> 
+              <i class="pi pi-search" style="font-size: 1.5rem"></i>           
+              <input type="text" required class="">              
+              <button class="">thêm</button>
+            </div>                              
+          </div>
+        </div>
+    <div class="grid grid-cols-1 lg:grid-cols-4           
+                gap-x-[10px] 
+                py-12                
+                px-4   
+                ">
+        <div class="wrapper " *ngFor="let item of dataArr">
+            <img class="w-full h-[64%]" src="{{item.img}}" alt="">
+            <div class="px-6 py-4">
+              <div class="font-bold text-xl mb-2 text-center"><b>{{item.tenphim}}</b></div>
+              <br>
+              <div>           
+                <label for="">Thể loại: {{item.theloai}}</label>               
+                <br>
+                <label for="">Thời Lượng: {{item.thoiluong}}</label>
+                
+                <br>
+                <label for="">Khởi chiếu: {{item.khoichieu}}</label>
+                
+                <br>
+                <label for="">Giờ chiếu: {{item.giochieu}} </label>
+                
+            </div>
+            </div>
+            <div class="px-6 pt-4 pb-2">
+                <button class="btn-chitiet basis-1/2 inline-block ">chi tiết </button>
+                <button class="btn-deleleicon basis-1/2 pi pi-trash " style="color: black"></button>
+            </div>
+        </div>
+        
+    </div>   
+</div>

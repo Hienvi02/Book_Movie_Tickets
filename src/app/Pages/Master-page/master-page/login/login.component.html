@@ -5,32 +5,29 @@
                 <div class="form-box-login ">
                     <h2><b>LOGIN</b></h2>
                     <form action="#" >
-                        <div class="input-box py-5 ">
-                            <span class="pi pi-envelope mr-2"></span>
-                            <input type="email" required>
-                            <label class="ml-2" >Email</label>
-                        </div>
                         <div class="input-box">
-                            <span class="pi pi-lock mr-2"></span>               
+                            <i class="pi pi-user" style="font-size: 1.25rem"></i>             
+                            <input type="text" required>
+                            <label class="ml-2">User</label>
+                        </div>                       
+                        <div class="input-box">
+                            <i class="pi pi-eye" style="font-size: 1.25rem"></i>             
                             <input type="password" required>
-                            <label class="ml-2">PassWord</label>
+                            <label class="ml-2">Password</label>
                         </div>
                         <div class="forgot">
                             <section>
-                                <a href="#">forgot password</a>
+                                <a href="#">forgot password ?</a>
                             </section>
                         </div>
                         <div class="btn-login ">
-                            <button ><a routerLink="/TRANG CHU" routerLinkActive="active">LOGIN</a></button>
-                        </div>
-                        
+                            <button ><a routerLink="/trangchu" routerLinkActive="active">LOGIN</a></button>
+                        </div>                       
                     </form>
                 </div>
             </div>
-        </body>
-        
+        </body>      
     </div>
     <div></div>
 </div>
-
-
+<router-outlet></router-outlet>

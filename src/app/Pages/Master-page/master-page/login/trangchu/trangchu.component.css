@@ -1,0 +1,45 @@
+@import "primeicons/primeicons.css";
+
+*{
+    font-family:'poppins' sans-serif;
+    @apply box-border 
+}
+header {
+    @apply fixed h-24 w-full py-5 bg-orange-400  content-between items-center z-[99]
+}
+.logo{
+    font-size: 2rem;
+    color: #fff;
+    font-size: 35px;
+    padding: 0 100px;
+    font-weight: bold;
+    line-height: 80px;
+    @apply mx-6 -my-5 items-start pl-0 mr-24 
+       
+}
+
+ .ct-top-menu-item{
+    @apply relative text-xs text-white decoration-clone  ml-1 py-5
+    after:absolute     
+    after:bottom-0 
+    after:left-0 
+    after:bg-orange-800 
+    after:h-1 
+    after:w-0 
+    hover:after:w-full 
+    after:transition-all  
+    after:ease-in-out 
+    after:duration-300;
+} 
+nav ul li a {
+    font-size: 17px;    
+}
+
+.bm-icon{ @apply
+    w-5
+    h-5
+    inline-block
+}
+.pi-menu {
+    @apply justify-start items-center ml-8 lg:hidden
+}
