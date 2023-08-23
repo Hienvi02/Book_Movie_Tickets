@@ -1,0 +1,11 @@
+<div>
+    <p class="text-center pt-9 text-2xl"><b>XÓA TRẠNG THÁI</b></p>
+    <div class="text-center py-2 text-l" *ngIf="data">
+        <p ><b> BẠN CÓ CHẮC CHẮN MUỐN XÓA TRẠNG THÁI PHÒNG {{data.status}}
+        </b></p>
+    </div>
+    <div class="flex justify-between"> 
+        <button mat-raised-button (click)="cancel()">huy</button>   
+        <button mat-raised-button color="warn" (click)="deleteemp()">xoa</button>
+    </div>
+</div>

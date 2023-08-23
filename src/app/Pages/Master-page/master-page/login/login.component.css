@@ -17,7 +17,7 @@ body{
 }
 .btn-login{
    
-    @apply items-center text-center py-2 px-6 bg-orange-400 rounded-xl w-full ;
+    @apply items-center text-center py-2 px-6 bg-gray-400 rounded-xl w-full text-white text-xl;
 }
 .wrapper-login{
     
@@ -32,7 +32,6 @@ body{
     justify-content: center;
     align-items: center;
     
-    /* @apply bg-transparent w-80 h-96 items-center text-center  */
 }
 .form-box-login form{
     @apply w-80
@@ -64,4 +63,7 @@ body{
     justify-content: space-between;
     margin-bottom: 20px;
     @apply pl-48
+}
+.example-container mat-form-field + mat-form-field {
+    margin-left: 8px;
 }

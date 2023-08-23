@@ -1,0 +1,48 @@
+<div class="form-group">
+    <div>
+        <h1 class="text-center pb-6"><b>Chỉnh Sửa Thông Tin Nhân Viên</b></h1>
+    </div>
+    <form >
+        <div class="form" >
+            <div class="grid grid-cols-1"> 
+                <mat-form-field >
+                    <mat-label>Tên </mat-label>
+                    <input matInput [(ngModel)]="employee.name" name="name">
+                </mat-form-field> 
+            
+                <mat-form-field >
+                    <mat-label>Số Điện Thoại</mat-label>
+                    <input matInput [(ngModel)]="employee.phone" name="phone">
+                </mat-form-field>
+           
+                <mat-form-field>
+                    <mat-label>Địa Chỉ</mat-label>
+                    <input matInput [(ngModel)]="employee.address" name="address">
+                </mat-form-field> 
+            
+                <mat-form-field class="">
+                    <mat-label class="">Ngày Sinh</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="employee.dateOfBirth" name="dataOfBirth"  >
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>            
+            
+                <mat-form-field >
+                    <mat-label>Tên Người Dùng</mat-label>
+                    <input matInput [(ngModel)]="employee.userName" name="userName">
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label >mật khẩu</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="employee.password" name="password">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field> 
+            </div>   
+        </div>
+        <div class="form-btn">
+                <button class="form-btn-cancel" mat-raised-button data-bs-dismiss="modal" (click)="cancel()">HỦY</button>
+                <button  class="forn-btn-save" mat-raised-button color="warn" (click)="saveState()">LƯU</button>
+        </div>
+    </form>
+</div>      

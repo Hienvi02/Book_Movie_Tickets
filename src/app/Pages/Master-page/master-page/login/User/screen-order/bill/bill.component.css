@@ -1,0 +1,50 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh
+}
+
+.body-login{
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: flexed;
+    min-height:100vh;
+   
+    
+}
+.wrapper-login{
+    
+    width: 500px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px; 
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 50px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-box-login h2{   
+   @apply text-center text-4xl text-black
+}
+.form-box-login form{
+    @apply w-80
+}
+.btn-bill{
+   @apply  text-center mt-12 
+    bg-slate-500 rounded-xl text-white text-sm mx-7 w-24 h-10
+    focus:ring-4 focus:outline-none 
+    focus:ring-gray-400 
+    dark:bg-gray-500 
+    dark:hover:bg-gray-500 
+    dark:focus:ring-gray-600
+}
+.label{
+    @apply text-xl py-10
+}
+.btn{
+ 
+}

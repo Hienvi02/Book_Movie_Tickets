@@ -1,0 +1,21 @@
+<div class="form-group">
+    <div>
+        <h1 class="text-center pb-6"><b>Thêm Tình Trạng Phòng</b></h1>
+    </div>
+    <form [formGroup]="empform">
+        <div class="grid grid-cols-1">
+                <mat-form-field >
+                    <mat-label>Code </mat-label>
+                    <input matInput formControlName="code" >
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Trạng thái</mat-label>
+                    <input matInput formControlName="status">
+                </mat-form-field>
+        </div>
+        <div class="form-btn">
+            <button class="form-btn-cancel" mat-raised-button (click)="cancel()">HỦY</button>
+            <button class="forn-btn-save" mat-raised-button color="warn" (click)="addProplem(this.empform.value)" [disabled]="this.empform.invalid">LƯU</button>
+        </div>
+    </form>
+</div>

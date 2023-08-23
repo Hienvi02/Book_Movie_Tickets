@@ -1,0 +1,61 @@
+<div>
+    <div class="py-10 px-56">
+        <h1 class="text-center "><b> THÊM PHIM</b></h1>
+    </div>
+    <form [formGroup]="empform" >
+        <div class="form w-full">
+            <div class="grid grid-cols-2 form-row">
+                <mat-form-field class="row">
+                    <mat-label>Tên Phim</mat-label>
+                    <input matInput formControlName="name">
+                </mat-form-field>
+                <mat-form-field class="row " >
+                    <mat-label>Thời Lượng</mat-label>
+                    <input matInput formControlName="time">
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <mat-form-field class=" row w-52">
+                    <mat-label class="">Khởi Chiếu</mat-label>
+                    <input matInput [matDatepicker]="picker"  formControlName="openingDay" >
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="row">
+                    <mat-label>Thể Loại</mat-label>
+                    <mat-select formControlName="typeId">
+                    <mat-option *ngFor="let type of genre" [value]="type.id" >{{type.name}}</mat-option>
+                    </mat-select>  
+                </mat-form-field>     
+            </div>
+            <div class="row form-row">
+                <mat-form-field class="w-full">
+                        <mat-label>Mô Tả</mat-label>
+                        <textarea matInput formControlName="description"></textarea>
+                    </mat-form-field>
+            </div>
+            <div class=" form-row">
+                <mat-form-field class="w-full ">
+                    <mat-label>Đạo diễn</mat-label>
+                    <input matInput formControlName="director">
+                </mat-form-field>
+            </div>
+            <div class="row form-row">
+                <p-fileUpload
+                    class=" bg-white "
+                    
+                    mode="basic"
+                    chooseLabel="image"
+                    name="demo[]"
+                    url="https://www.primefaces.org/cdn/api/upload.php"
+                    accept="image/*"
+                    (onUpload)="onUpload($event)">
+                </p-fileUpload>
+            </div>     
+        </div>   
+        <div class="form-btn">
+            <button class="form-btn-cancel" mat-raised-button (click)="cancel()">HỦY</button>
+            <button class="form-btn-save" type="submit" mat-raised-button color="warn" (click)="addMovie(this.empform.value)" [disabled]="this.empform.invalid">LUU</button>
+        </div>
+    </form>
+</div>

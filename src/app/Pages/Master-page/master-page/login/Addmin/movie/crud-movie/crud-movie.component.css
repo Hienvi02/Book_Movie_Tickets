@@ -1,0 +1,34 @@
+/* .form{
+    @apply px-24 py-10 max-h-full flex-1
+}
+.form-row{
+    
+    @apply  flex gap-3 px-3 w-96 
+}
+.form-row mat-label{
+    @apply text-slate-950
+}
+.form-btn{
+    @apply  pl-96 pb-10
+} */
+.form-group{
+    @apply px-10 py-10 
+}
+
+.form-row{ 
+    @apply  flex gap-3 px-3
+}
+
+.form-row mat-lable{
+    @apply gap-5 px-5 mx-5
+}
+
+.form-btn{
+    @apply pt-9 m-16 flex-auto my-6
+} 
+.form-btn-cancel{
+    @apply  pl-4 mr-80 ml-9
+}
+.form{
+    @apply px-24 py-10 max-h-full flex-auto
+}

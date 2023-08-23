@@ -1,0 +1,60 @@
+<div>
+    <div class="py-10 px-56">
+        <h1 class="text-center "><b>CHỈNH SỬA PHIM</b></h1>
+    </div>
+    <form  >
+        <div class="form w-full">
+            <div class="form-row">
+                <mat-form-field class="row">
+                    <mat-label>Tên Phim</mat-label>
+                    <input matInput [(ngModel)]="movie.name" name="name">
+                </mat-form-field>
+                <mat-form-field class="row " >
+                    <mat-label>Thời Lượng</mat-label>
+                    <input matInput [(ngModel)]="movie.time" name="time">
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <mat-form-field class=" row w-52">
+                    <mat-label class="">Khởi Chiếu</mat-label>
+                    <input matInput [matDatepicker]="picker"  [(ngModel)]="movie.openingDay" name="openingDay">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="row">
+                    <mat-label>Thể Loại</mat-label>
+                    <mat-select [(ngModel)]="movie.typeName" name="typeName">
+                        <mat-option *ngFor="let genre of genre" [value]="genre.name">{{ genre.name }}</mat-option>
+                    </mat-select>  
+                </mat-form-field>     
+            </div>
+            <div class="form-row">
+                <mat-form-field class="w-full">
+                    <mat-label>Mô Tả</mat-label>
+                    <textarea matInput [(ngModel)]="movie.description" name="description"></textarea>
+                </mat-form-field>
+            </div>
+            <div>
+                <div class="card flex justify-content-center">
+                    <p-fileUpload
+                    class="bg-white"
+                    mode="basic"
+                    chooseLabel="image"
+                    name="demo[]"
+                    url="https://www.primefaces.org/cdn/api/upload.php"
+                    accept="image/*"
+                    (onUpload)="onUpload($event)"
+                    [(ngModel)]="movie.image"
+                ></p-fileUpload>
+            </div>      
+            </div>
+        </div>
+        <div class="form-btn">
+            <button class="form-btn-cancel" mat-raised-button (click)="cancel()">HỦY</button>
+            <button class="form-btn-save" type="submit" mat-raised-button color="warn" (click)="saveState()">LUU</button>
+        </div>
+    </form>
+</div>
+
+
+

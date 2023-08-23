@@ -3,25 +3,30 @@
         <body class="body-login">
             <div class=" wrapper-login">
                 <div class="form-box-login ">
-                    <h2><b>LOGIN</b></h2>
+                    <h2><b>Đăng Nhập</b></h2>
                     <form action="#" >
                         <div class="input-box">
-                            <i class="pi pi-user" style="font-size: 1.25rem"></i>             
-                            <input type="text" required>
-                            <label class="ml-2">User</label>
+                            <i class="pi pi-user" style="font-size: 1.25rem" ></i>             
+                            <input type="text" required [(ngModel)]="addmin.userName" name="username">
+                            <label class="ml-2">Tên Người Dùng</label>
                         </div>                       
-                        <div class="input-box">
-                            <i class="pi pi-eye" style="font-size: 1.25rem"></i>             
-                            <input type="password" required>
-                            <label class="ml-2">Password</label>
+                        <div class="input-box"> 
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="pi ml-20">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>          
+                            <input matInput [type]="hide ? 'password' : 'text'" required [(ngModel)]="addmin.password" name="password" >
+                            
+                            <label class="ml-2">Mật Khẩu</label>
                         </div>
                         <div class="forgot">
                             <section>
-                                <a href="#">forgot password ?</a>
+                                <a href="#">Quên mật khẩu ?</a>
                             </section>
                         </div>
-                        <div class="btn-login ">
-                            <button ><a routerLink="/trangchu" routerLinkActive="active">LOGIN</a></button>
+                        <div class="btn-login" (click)="onLogin()">
+                            <button >Đăng Nhập
+                                
+                            </button>
                         </div>                       
                     </form>
                 </div>
@@ -30,4 +35,9 @@
     </div>
     <div></div>
 </div>
-<router-outlet></router-outlet>
+
+<!-- <router-outlet></router-outlet> -->
+
+<form>
+    <input type="text">
+</form>

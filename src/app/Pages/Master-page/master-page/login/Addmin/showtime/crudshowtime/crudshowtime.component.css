@@ -1,0 +1,37 @@
+.form-group{
+    @apply px-10 py-10 
+}
+
+.form-row{ 
+    @apply  flex gap-3 px-3
+}
+
+.form-row mat-lable{
+    @apply gap-5 px-5 mx-5
+}
+
+.form-btn{
+    @apply pt-9 mr-4
+}
+.form-btn-cancel{
+    @apply mr-80 pl-4 ml-3
+}
+.container {
+    position: relative;
+  }
+  
+  .container ngx-material-timepicker {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  :host ::ng-deep .p-calendar{
+width:100%
+}
+
+:host ::ng-deep .p-calendar
+	.p-datepicker table td.p-datepicker-today>span,
+:host ::ng-deep .p-calendar .p-datepicker
+	table td.p-datepicker-today>span:hover {
+
+}

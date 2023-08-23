@@ -1,0 +1,14 @@
+<div>
+    <p class="text-center pt-9 text-2xl"><b>XÓA NHÂN VIÊN</b></p>
+    <div class="text-center py-2 text-l" *ngIf="data">
+        <p >
+            <b> BẠN CÓ CHẮC CHẮN MUỐN XÓA NHÂN VIÊN </b>
+            <br>
+            <b>{{data.name}}</b>
+        </p>
+    </div>
+    <div class="flex justify-between"> 
+        <button mat-raised-button (click)="cancel()">HỦY</button>   
+        <button mat-raised-button color="warn" (click)="deleteemp()">XÓA</button>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="wrapper-login">
+  <div class="form-box-login">
+    <h2><b>Thanh Toán</b></h2>
+    <form class="form">
+      <div>
+        <div class="label">
+          <label>Phim: {{ data.movieDetail.filmName }}</label>
+          <br />
+          <label>Ngày Chiếu: {{ data.movieDetail.time | date : "yyyy-MM-dd" }}</label>
+          <br />
+          <label>Suất Chiếu: {{ data.movieDetail.time | date : "hh:mm" }} </label>
+          <br />
+          <label>Rạp:{{ data.movieDetail?.roomName }}</label>
+        </div>
+        <div class="label">
+          <label
+            >Ghế:
+            <span *ngFor="let i of data?.data">{{ i.name + " " }}</span>
+          </label>
+          <br />
+          <label>Giá Vé:{{ price }} </label>
+        </div>
+      </div>
+      <div class="text-xl pt-4">Tổng:{{ data?.data.length * price }}</div>
+    </form>
+    <div class="btn grid grid-cols-2 gap-16">
+      <button class="btn-bill" (click)="cancel()">TRỞ VỀ</button>
+      <button class="btn-bill" (click)="pay()">THANH TOÁN</button>
+    </div>
+  </div>
+</div>

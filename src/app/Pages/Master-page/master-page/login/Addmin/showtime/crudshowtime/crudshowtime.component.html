@@ -1,0 +1,40 @@
+<div class="form-group">
+  <div>
+    <h1 class="text-center pb-6"><b>Thêm Mới Suất Chiếu</b></h1>
+  </div>
+  <form [formGroup]="empform">
+    <div class="grid grid-cols-1">
+      <mat-form-field class="row">
+        <mat-label>Tên Phim</mat-label>
+        <mat-select formControlName="filmId">
+          <mat-option *ngFor="let type of dataOption" [value]="type.id">{{
+            type.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="row">
+        <mat-label>Rạp</mat-label>
+        <mat-select formControlName="roomId">
+          <mat-option *ngFor="let type of dataRoom" [value]="type.id">{{
+            type.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+        <p-calendar class=" w-full!  justify-content-center" placeholder="suất chiếu" [(ngModel)]="date" [showTime]="true" [showSeconds]="true" formControlName="time" ></p-calendar> 
+    </div>
+  </form>
+  <div class="form-btn">
+    <button class="form-btn-cancel" mat-raised-button (click)="cancel()">
+      HỦY
+    </button>
+    <button
+      class="forn-btn-save"
+      mat-raised-button
+      color="warn"
+      (click)="addShowtime(this.empform.value)"
+      [disabled]="this.empform.invalid"
+    >
+      LƯU
+    </button>
+  </div>
+</div>

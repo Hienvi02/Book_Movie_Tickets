@@ -1,0 +1,63 @@
+<div class="bg-">
+    <div class="flex justify-between px-10  mt-10 ">
+        <div class="basis-4/5 ">
+            <div class="screen mb-10">Màn Hình</div>
+            <div class="w-full grid grid-cols-9 mx-10 pr-10 ">
+                <div  *ngFor="let seat of seatList; let rowIndex = index" (click)="clickseat(seat)">
+                    <span
+                            class="seat {{getStatusSeat(seat.status)}}">
+                        {{ seat.name}}
+                    </span>
+                </div>
+            </div>
+            <div class="flex justify-between px-20 pl-20 pt-10 w-full">
+                <div class="">
+                <th class="bg-red-600 w-5 h-5"></th>
+                <th class="px-5">Ghế Trống  </th>
+                </div>
+                <div>
+                <th class="bg-blue-700 w-5 h-5 "></th>
+                <th class="px-5">Ghế Đang Chọn</th>
+                </div>
+                <div>
+                <th class="bg-gray-800 w-5 h-5"></th>
+                <th class="px-5">Đã bán</th>
+                </div>
+            </div>
+            <div class="pl-16 pt-5  h-80 text-xl">
+                <div class="row basis-1/5 ">
+                    <label for=""><b> Ghế:   </b></label>
+                    <span *ngFor="let i of seatSelected">{{i.name+ " " }}</span>
+                    <br>
+                    <label for=""><b>Giá Vé:   </b></label>
+                    <span>{{price}}</span>
+                    <br>
+                    <label for=""><b>Tổng Tiền:  </b></label>
+                    <span >{{seatSelected.length * price}}</span>
+                </div>  
+                <div>
+                    <button class=" btn-skip "(click)="skip()">Tiếp Tục</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-left text-lg w-80  px-11 basis-1/5" > 
+            <div class="tqd-product-card pb-8  w-full" > 
+                <div class="featured-bg" [style] ="'background-image: url(' + dataDetail.image+ ');'" ></div>
+            </div>
+            <div class="row basis-1/5">
+                <label for=""><b>Tên Phim:    </b>
+                    <span>{{dataDetail.filmName}}</span>
+                </label> 
+                <br>
+                <label for=""><b>Suất Chiếu:   </b>
+                    <span>{{dataDetail.time| date: 'hh:mm' }}</span>
+                </label>
+                <br>
+                <label for=""><b>Phòng:  </b>
+                    <span>{{dataDetail.roomName}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+</div>

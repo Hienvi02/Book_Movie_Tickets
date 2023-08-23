@@ -1,0 +1,113 @@
+<app-trangchu></app-trangchu>
+<div class="pt-24 ">
+
+  <div class="card px-20 pb-20">
+    <p-table
+      [columns]="cols"
+      #dt
+      [value]="products"
+      [globalFilterFields]="['name']"
+      [paginator]="true"
+      [rows]="5"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      currentPageReportTemplate="Showing  to 10 of 200 entries"
+      [rowsPerPageOptions]="[5, 10]"
+    >
+    <ng-template pTemplate="caption">
+      <div class="flex justify-between">
+        <label class="relative block">
+          <span class="sr-only">Search</span>
+          <span class="absolute inset-y-0 left-0 flex vals-center pl-2">
+            <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"></svg>
+          </span>
+          <input
+            class="search"
+            pInputText
+            (input)="filterTable(dt,$event)"
+            placeholder="tìm kiếm"
+            type="text"
+            name="search"
+          />
+         </label>
+        <button mat-raised-button (click)="openaddmovie()">
+          <b>THÊM</b>
+        </button>
+      </div>
+  </ng-template>
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns,index as i">
+        {{ col.header }}
+      </th>
+      <th>
+        
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">
+        {{ rowData[col.field] }}
+      </td>
+      <td>
+        
+        <button (click)="openUpdateMovie(rowData)" class="pi pi-pencil pr-5" style="color: black; "></button>
+        <button (click)="deleteMovie(rowData)"  class=" pi pi-trash" style="color: red;"></button>
+      </td>
+    </tr>
+  </ng-template>
+  </p-table>
+  </div>
+</div>
+
+
+<!-- 
+<div class="pt-20">
+  <table class="table">
+    <mat-toolbar class="">
+      <label class="relative block">
+        <span class="sr-only">Search</span>
+        <span class="absolute inset-y-0 left-0 flex vals-center pl-2">
+          <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"></svg>
+        </span>
+        <input class="search" [(ngModel)]="searchText" placeholder="tìm kiếm" type="text" name="search"/>
+      </label>
+        <span class="example-spacer "></span>
+        <button mat-raised-button (click)="openaddmovie()" >
+              <b>THÊM</b>
+        </button>
+    </mat-toolbar>
+     <div>
+      <table class="">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Tên Phim</th>
+            <th>Thể Loại</th>
+            <th>Đạo Diễn</th>
+            <th>Thời Lượng</th>
+            <th>Khởi Chiếu</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of newdatamovie |filter: searchText| paginate: { itemsPerPage: 5, currentPage:p}, index as e">
+            <td>{{e+1}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.typeName}}</td>
+            <td>{{i.director}}</td>
+            <td>{{i.time}}</td>
+            <td>{{i.openingDay|date:'yyyy-MM-dd'}} </td>
+            <td>
+                <button (click)="openUpdateMovie(newdatamovie[e])" class="pi pi-pencil pr-5" style="color: black; "></button>
+                <button (click)="deleteMovie(i.id)" class=" pi pi-trash" style="color: red;"></button>
+               
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <pagination-controls (pageChange)="p = $event" ></pagination-controls>
+  </table>
+  
+</div> -->

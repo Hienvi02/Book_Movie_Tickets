@@ -1,0 +1,53 @@
+<div class="conten-wraper max-w-screen-2xl text-base bg-white" >
+  <header>
+    <nav class="flex justify-between items-center px-20">
+      <div class="py-2">
+        <div class="w-20 h-10">
+          <img src="https://www.dcine.vn/Content/img/logo-black.png" alt="">
+        </div>
+        <input
+          type="text"
+          class="w-48 mr-48 left-14 bg-transparent outline-none"
+        />
+      </div>
+      <ul
+        class="basis-4/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-7 text-2xl" *ngFor="let item of itemHeader"
+      >
+      
+      <li class="{{getStatusForItem(item.path) ? 'selected-item':'default-item '}}" (click)="navigatorUrl(item.path)">
+        <a [routerLink]="item.path" routerLinkActive="active"
+          >{{ item.content }}</a
+        >
+      </li>
+      
+        <!-- <li class="{{getStatusForItem('showtime') ? 'selected-item':'default-item '}}" (click)="navigatorUrl('showtime')">
+          <a [routerLink]="item.path" routerLinkActive="active"
+            >{{ item.content }}</a
+          >
+        </li>
+        <li class="{{getStatusForItem('employee') ? 'selected-item':'default-item '}}" (click)="navigatorUrl('employee')">
+          <a routerLink="/employee" routerLinkActive="active"
+            >QUẢN LÝ NHÂN SỰ</a
+          >
+        </li>
+        <li class="{{getStatusForItem('customer') ? 'selected-item':'default-item '}}" (click)="navigatorUrl('customer')">
+          <a routerLink="/customer" routerLinkActive="active"
+            >QUẢN LÝ KHÁCH HÀNG</a
+          >
+        </li>
+        <li class="{{getStatusForItem('movie') ? 'selected-item':'default-item '}}"(click)="navigatorUrl('movie')" >
+          <a routerLink="/movie" routerLinkActive="active">QUẢN LÝ PHIM</a>
+        </li>
+        <li class="{{getStatusForItem('proplem') ? 'selected-item':'default-item '}}" (click)="navigatorUrl('proplem')" >
+          <a routerLink="/proplem" routerLinkActive="">SỰ CỐ</a>
+        </li>
+        <li class="default-item">
+          <a href="" (click)="logout()">THOÁT</a>
+        </li> -->
+        
+      </ul>
+      <!-- <button  (click)="logout()">THOÁT</button> -->
+    </nav>
+  </header>
+  <router-outlet></router-outlet>
+</div>

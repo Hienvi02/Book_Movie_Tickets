@@ -1,0 +1,46 @@
+<div> 
+  <div class="conten-wraper max-w-screen-2xl text-base bg-white">
+    <header>
+        <nav class="flex justify-center items-center">
+            <div class="py-2" > 
+                <div class="w-20 h-10" >
+                  <img src="https://www.dcine.vn/Content/img/logo-black.png" alt="">
+                </div>
+                <input type="text" class=" w-48 mr-48 left-14 bg-transparent outline-none"  >                  
+            </div >               
+            <ul class="basis-4/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 text-xs text-gray-500  " >
+                <li class="ct-top-menu-item">    
+                </li>               
+                <li class="ct-top-menu-item">
+                  <a (click)="logout()" class="pi pi-times" color="bg-white"></a>
+              </li> 
+            </ul>  
+        </nav>
+    </header>
+</div>
+<div class="featured w-full px-9 py-24"  >
+  <div class="grid grid-cols-4 gap-2 rounded-md ">
+    <div class="tqd-product-card " *ngFor="let item of dataArr" (click)="clickScreen(item.id)">
+      <div class="featured-bg" [style] ="'background-image: url(' + item.image+ ');'" >
+          <div class="group">
+            <div class="group-hider  ">
+              <div class="font-bold text-xl mb-2 text-center "><b>{{item.filmName}}</b>
+                <div class="font-medium px-2 text-left">           
+                  <label for="">Thể loại: {{item.typeName}}</label>               
+                  <br>
+                  <label for="">Thời Lượng: {{item.duration}}</label>   
+                  <br>
+                  <label for="">Khởi chiếu: {{item.time|date:'yyyy-MM-dd'}}</label>
+                  <br>
+                  <label for="">Suất chiếu: {{item.time| date: 'hh:mm' }} </label> 
+                  <br>
+                  <label for="">Phòng: {{item.roomName}} </label>
+              </div>
+              </div>
+            </div>    
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+    

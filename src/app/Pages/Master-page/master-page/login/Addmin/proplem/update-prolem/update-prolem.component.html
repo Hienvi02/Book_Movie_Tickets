@@ -1,0 +1,21 @@
+<div class="form-group">
+    <div>
+        <h1 class="text-center pb-10"><b>Cập Nhập Trạng Thái</b></h1>
+    </div>
+    <form>
+        <div class="grid grid-cols-1">
+                <mat-form-field >
+                    <mat-label>Code </mat-label>
+                    <input matInput [(ngModel)]="RoomStatus.code" name="Code">
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Tên </mat-label>
+                    <input matInput  [(ngModel)]="RoomStatus.status" name="status">
+                </mat-form-field>  
+        </div>
+        <div class="form-btn">
+            <button class="form-btn-cancel" mat-raised-button data-bs-dismiss="modal" (click)="cancel()">HỦY</button>
+            <button  class="forn-btn-save" mat-raised-button color="warn" (click)="saveState()">LƯU</button>
+        </div>
+    </form>
+</div>

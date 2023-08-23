@@ -1,0 +1,36 @@
+<div class="form-group">
+    <div>
+        <h1 class="text-center pb-12 mb-5 "><b>Chỉnh Sửa Thông Tin Khách Hàng</b></h1>
+    </div>
+    <form >
+        <div class="form" >
+            <div class="form-row"> 
+                <mat-form-field >
+                    <mat-label>Tên </mat-label>
+                    <input matInput [(ngModel)]="customer.name" name="name">
+                </mat-form-field>  
+                <mat-form-field >
+                    <mat-label>Số Điện Thoại</mat-label>
+                    <input matInput [(ngModel)]="customer.phone" name="phone">
+                </mat-form-field>
+                
+            </div>
+            <div class="form-row">
+                <mat-form-field>
+                    <mat-label>Địa Chỉ</mat-label>
+                    <input matInput [(ngModel)]="customer.address" name="address">
+                </mat-form-field> 
+                <mat-form-field class="w-52">
+                    <mat-label class="">Ngày Sinh</mat-label>
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="customer.dateOfBirth" name="dataOfBirth">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>            
+            </div>    
+        </div>
+        <div class="form-btn">
+                <button class="form-btn-cancel" mat-raised-button data-bs-dismiss="modal" (click)="cancel()">HỦY</button>
+                <button  class="forn-btn-save" mat-raised-button color="warn" (click)="saveState()">LƯU</button>
+        </div>
+    </form>
+</div>  

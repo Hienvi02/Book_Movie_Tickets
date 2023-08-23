@@ -1,0 +1,15 @@
+.form-group{
+    @apply px-12 py-20 
+}
+.form-row{ 
+    @apply  flex gap-3 px-5
+}
+.form-row mat-label{
+    @apply text-slate-950 gap-5 px-5 mx-5
+}
+.form-btn{
+    @apply  pt-9 mr-4
+}
+.form-btn-cancel{
+    @apply mr-80 pl-4 ml-3
+}

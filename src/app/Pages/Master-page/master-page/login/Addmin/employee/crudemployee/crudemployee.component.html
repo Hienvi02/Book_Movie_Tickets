@@ -1,0 +1,42 @@
+<div class="form-group">
+    <div>
+        <h1 class="text-center pb-6"><b>Thêm Mới Nhân Viên</b></h1>
+    </div>
+    <form [formGroup]="empform">
+        <div class="grid grid-cols-1">          
+                <mat-form-field >
+                    <mat-label>Tên </mat-label>
+                    <input matInput formControlName="name" >
+                </mat-form-field>  
+                <mat-form-field >
+                    <mat-label>Số Điện Thoại</mat-label>
+                    <input matInput formControlName="phone">
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>Tên Người Dùng</mat-label>
+                    <input matInput formControlName="userName">
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label >Ngày Sinh</mat-label>
+                    <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" [disabled]="true" [readonly]="true">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>               
+                <mat-form-field>
+                    <mat-label>Địa Chỉ</mat-label>
+                    <input matInput formControlName="address">
+                </mat-form-field> 
+                <mat-form-field>
+                    <mat-label >mật khẩu</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" >
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>           
+            </div>
+        <div class="form-btn">
+            <button class="form-btn-cancel" mat-raised-button (click)="cancel()">HỦY</button>
+            <button mat-raised-button color="warn" (click)="addemployee(this.empform.value)" [disabled]="this.empform.invalid">LƯU</button>
+        </div>
+    </form>
+</div>

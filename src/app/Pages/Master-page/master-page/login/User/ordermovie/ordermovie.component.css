@@ -1,0 +1,49 @@
+
+
+header {
+    @apply fixed h-20 w-full py-2 bg-gray-200  content-between items-center z-[99] 
+
+}
+.ct-top-menu-item{
+    @apply relative text-2xl text-black decoration-clone  ml-1 py-5
+    after:absolute     
+    after:bottom-0 
+    after:left-0 
+    after:bg-gray-400
+    after:h-1 
+    after:w-0 
+   
+    after:transition-all  
+    after:ease-in-out 
+    after:duration-300;
+} 
+
+.group{
+    @apply w-full h-full
+         hover:bg-white 
+         hover:bg-opacity-70 
+         hover:transition-all 
+         hover:ease-in-out 
+         hover:duration-500 relative
+}
+.group-hider{
+    @apply absolute
+         bg-white 
+           ease-in-out 
+         text-black 
+           hidden group-hover:block 
+           text-center 
+           pt-80 
+           uppercase 
+           tracking-wider 
+           py-8 px-8 mb-10
+           text-sm 
+           font-semibold 
+           cursor-pointer 
+           hover:bg-opacity-10 
+           w-full
+}
+.featured-bg{
+    @apply  h-[540px] w-full bg-cover bg-no-repeat bg-bottom
+}
+
